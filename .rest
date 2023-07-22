@@ -9,3 +9,4 @@ Content-Type: application/json
   "termsAndConditions": true,
   "isAdmin": false
 }
+// TODO: missing photo
