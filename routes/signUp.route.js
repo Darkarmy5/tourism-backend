@@ -6,6 +6,7 @@ const sendEmail = require("../utils/sendEmail");
 const bcrypt = require("bcrypt");
 const upLoaders = require("../utils/multer");
 const cloudinary = require("../utils/cloudinary");
+const sendEmail = require("../utils/sendEmail");
 // middleware to upload images
 router.post("/", upLoaders, async (req, res) => {
     try {
