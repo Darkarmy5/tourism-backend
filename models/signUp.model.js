@@ -75,7 +75,7 @@ const validate = (data)=> {
     termsAndConditions: Joi.boolean().valid(true).required().messages({
       "any.only": "You must accept the terms and conditions",
     }),
-    isAdmin: Joi.boolean().required(),
+    isAdmin: Joi.boolean(),
     photo: Joi.string(),
   });
   return schema.validate(data);
