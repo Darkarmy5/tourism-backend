@@ -47,7 +47,7 @@ router.post("/forget", async (req, res) => {
         }
       };
       const token = JwtGenerator(playLoad);
-      const url = `https://tourism-9eqc.onrender.com/${existingUser._id}/reset/${token}`;
+      const url = `https://tourism-9eqc.onrender.com/login/${existingUser._id}/reset/${token}`;
       await sendEmail(email, "Reset Password", url);
     }
     res.status(201).send({ message: "Email sent for password reset" });
