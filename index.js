@@ -33,8 +33,6 @@ app.use(morgan("dev")); // log the request in the console
   mongoose.connect(`mongodb+srv://${process.env.username}:${process.env.password}@cluster0.xwadktq.mongodb.net/?retryWrites=true&w=majority`, {
   useNewUrlParser: true,
   useUnifiedTopology: true,
-  useFindAndModify: false,
-  useCreateIndex: true,
 })
 const db = mongoose.connection
 db.on('error', console.error.bind(console, 'connection error:'))
