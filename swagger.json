@@ -30,13 +30,6 @@
           "produces": ["application/json"],
           "parameters": [
             {
-              "in": "header",
-              "name": "Bearer",
-              "description": "header to get authorized",
-              "required": true,
-              "type": "string"
-            },
-            {
               "in": "body",
               "name": "body",
               "description": "Booking information",
@@ -60,6 +53,14 @@
                 },
                 "required": ["name", "email", "phoneNumber", "numberOfPeople", "checkInDate", "checkOutDate", "activitySelection", "departureCity", "arrivalCity"]
               }
+              
+            },
+            {
+              "in": "header",
+              "name": "Bearer",
+              "description": "header to get authorized",
+              "required": true,
+              "type": "string"
             }
           ],
           "responses": {
@@ -216,13 +217,6 @@
         "consumes": ["application/json"],
         "parameters":[
           {
-            "in": "header",
-            "name": "Bearer",
-            "description": "header to get authorized",
-            "required": true,
-            "type": "string"
-          },
-          {
             "in": "body",
             "name": "body",
             "description": "Update user information" ,
@@ -240,6 +234,13 @@
               },
               "required": ["name", "email", "password", "confirmPassword", "termsAndConditions"]
             }
+          },
+          {
+            "in": "header",
+            "name": "Bearer",
+            "description": "header to get authorized",
+            "required": true,
+            "type": "string"
           }
 
         ],
