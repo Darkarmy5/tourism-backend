@@ -21,6 +21,7 @@
         "name": "USER"
       }
     ],
+    
     "paths": {
       "/api/bookings": {
         "post": {
@@ -57,7 +58,7 @@
             },
             {
               "in": "header",
-              "name": "Bearer",
+              "name": "token",
               "description": "header to get authorized",
               "required": true,
               "type": "string"
@@ -237,7 +238,7 @@
           },
           {
             "in": "header",
-            "name": "Bearer",
+            "name": "token",
             "description": "header to get authorized",
             "required": true,
             "type": "string"
