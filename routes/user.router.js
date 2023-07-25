@@ -19,10 +19,10 @@ router.get('/', authorize, async (req, res) => {
   }
 });
 
-router.put('/', authorize, upLoaders, async (req, res) => {
+router.put('/', authorize,  async (req, res) => {
     try {
         const { name, email, password, confirmPassword, termsAndConditions} = req.body;
-        const photoUrl = req.file.path;
+        
        
 
         const salt = await bcrypt.genSalt(Number(process.env.SALT));
@@ -30,8 +30,7 @@ router.put('/', authorize, upLoaders, async (req, res) => {
         if(password !== confirmPassword){
             return res.status(400).json({message: "Passwords do not match"});
         }
-         const result = await cloudinary.uploader.upload(photoUrl);
-        const photo = result.url;
+        
         const updatedUser = await User.findOneAndUpdate(
             { _id: req.user.id },
             {
@@ -40,7 +39,7 @@ router.put('/', authorize, upLoaders, async (req, res) => {
                 password: hashPassword,
                 confirmPassword: hashPassword,
                 termsAndConditions,
-                photo
+               
             },
             { new: true }
         );
