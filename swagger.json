@@ -21,13 +21,6 @@
         "name": "USER"
       }
     ],
-    "securityDefinitions": {
-      "Bearer": {
-        "type": "apiKey",
-        "name": "Authorization",
-        "in": "header"
-      }
-    },
     "paths": {
       "/api/bookings": {
         "post": {
@@ -39,9 +32,15 @@
             {
               "in": "header",
               "name": "Bearer",
+              "description": "header to get authorized",
+              "required": true,
+              "type": "string"
+            },
+            {
+              "in": "body",
+              "name": "body",
               "description": "Booking information",
               "required": true,
-              "type": "string",
               "schema": {
                 "type": "object",
                 "properties": {
@@ -219,9 +218,15 @@
           {
             "in": "header",
             "name": "Bearer",
+            "description": "header to get authorized",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "in": "body",
+            "name": "body",
             "description": "Update user information" ,
             "required": true,
-            "type": "string",
             "schema": {
               "type": "object",
               "properties": {
